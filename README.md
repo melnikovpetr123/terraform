@@ -1,6 +1,3 @@
----
-maintainer: alexsedova
----
 
 # Terraform + AWS + Docker Swarm setup
 
