@@ -5,7 +5,7 @@ provider "aws" {
   region      = "${var.region}"
 }
 resource "aws_instance" "master" {
-  ami           = "ami-26c43149"
+  ami           = "ami-00035f41c82244dab"
   instance_type = "t2.micro"
   security_groups = ["${aws_security_group.swarm.name}"]
   key_name = "${aws_key_pair.deployer.key_name}"
@@ -36,7 +36,7 @@ resource "aws_instance" "master" {
 
 resource "aws_instance" "slave" {
   count         = 1
-  ami           = "ami-26c43149"
+  ami           = "ami-00035f41c82244dab"
   instance_type = "t2.micro"
   security_groups = ["${aws_security_group.swarm.name}"]
   key_name = "${aws_key_pair.deployer.key_name}"
