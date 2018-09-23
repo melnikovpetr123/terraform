@@ -30,12 +30,12 @@ resource "aws_instance" "master" {
     destination = "/home/ubuntu/"
   }
   tags = { 
-    Name = "swarm-master"
+    Name = "PetrMelnikov-swarm-master"
   }
 }
 
 resource "aws_instance" "slave" {
-  count         = 2
+  count         = 1
   ami           = "ami-26c43149"
   instance_type = "t2.micro"
   security_groups = ["${aws_security_group.swarm.name}"]
@@ -62,6 +62,6 @@ resource "aws_instance" "slave" {
     ]
   }
   tags = { 
-    Name = "swarm-${count.index}"
+    Name = "PetrMelnikov-swarm-${count.index}"
   }
 }
